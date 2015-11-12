@@ -17,8 +17,8 @@ Package.onUse(function(api) {
   api.use('ecmascript@0.1.3');
   api.use('templating', 'client');
   api.use('reactive-var', 'client');
-  api.use('momentjs:moment', 'client', {weak: true});
-  api.use('copleykj:livestamp', 'client', {weak: true});
+  api.use('momentjs:moment@2.10.6', 'client', {weak: true});
+  api.use('copleykj:livestamp@1.1.7', 'client', {weak: true});
   api.addFiles('server.js','server');
   api.addFiles('deployDate.html', 'client');
   api.addFiles('deployDate.js','client');
