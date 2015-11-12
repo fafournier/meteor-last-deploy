@@ -1,46 +1,40 @@
 Package.describe({
-  name: 'monbro:last-software-release-date',
-  summary: 'This package will provide a easy way to show the last deployment date to meteor.js.',
-  version: '1.0.1',
-  git: 'https://github.com/monbro/meteor-last-software-release-package/'
+  name: 'fafournier:last-deploy',
+  summary: 'Get the last deployment date of the project.',
+  version: '0.0.1',
+  git: 'https://github.com/fafournier/last-deploy',
+  documentation: 'README.md'
 });
 
-function configurePackage(api) {
 
-  if(api.versionsFrom) {
-    api.versionsFrom('METEOR@1.0');
-  }
-
-  // Core Dependencies
-  api.use(
-    [
-      'blaze@2.0.0',
-      'templating@1.0.5',
-      'ui',
-      'meteor',
-      'session',
-      'meteorhacks:npm@1.2.2'
-    ]
-  );
-
-  api.use('copleykj:livestamp@1.1.2', 'client');
-
-  api.addFiles('lib/client.js','client');
-  api.addFiles('lib/server.js','server');
-  api.addFiles('lib/deploy_date.html');
-
-  api.export('DeployDate');
-}
+// Npm.depends({
+//   "path": "0.3.1",
+//   "fs": "3.1.3",
+// });
 
 Package.onUse(function(api) {
-  configurePackage(api);
+  api.versionsFrom('1.1.0.2');
+  api.use('ecmascript@0.1.3');
+  api.use('templating', 'client');
+  api.use('reactive-var', 'client');
+  api.use('momentjs:moment', 'client', {weak: true});
+  api.use('copleykj:livestamp', 'client', {weak: true});
+  api.addFiles('server.js','server');
+  api.addFiles('deployDate.html', 'client');
+  api.addFiles('deployDate.js','client');
+  api.export( 'methods', [ 'client', 'server' ] ) ;
 });
 
-Package.onTest(function(api) {
-  configurePackage(api);
 
-  api.use('tinytest');
-
-  // @todo
-  // api.addFiles('tests/breadcrumb-tests.js');
-});
+// Package.onTest(function(api) {
+//   api.versionsFrom('1.1.0.2');
+//   api.use('ecmascript@0.1.3');
+//   api.use( ['blaze@2.0.0', 'templating@1.0.5', 'ui', 'meteor', 'reactive-var']);
+//   api.use('copleykj:livestamp@1.1.2', 'client');
+//   api.addFiles('lib/client.js','client');
+//   api.addFiles('lib/server.js','server');
+//   api.addFiles('lib/deploy_date.html');
+//   api.export( 'methods', [ 'client', 'server' ] ) ;
+//
+//   api.use('tinytest');
+// });

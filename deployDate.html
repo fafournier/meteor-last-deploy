@@ -1,0 +1,15 @@
+<template name="deployDate">
+  {{#if isTimeStampRequested}}{{checkLiveStampPackage}}
+    <span title="{{lastDeployed}}" orignal="{{lastDeployed}}" data-livestamp="{{lastDeployed}}"></span>
+  {{else}}
+    {{#if isMomentTimeStamp}}
+      {{formatMomentTimeStamp}}
+    {{else}}
+      {{#if hasFormat}}
+        {{formatDate}}
+      {{else}}
+        {{lastDeployed}}
+      {{/if}}
+    {{/if}}
+  {{/if}}
+</template>
