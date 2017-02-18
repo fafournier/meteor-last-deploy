@@ -1,8 +1,8 @@
 Package.describe({
   name: 'fafournier:last-deploy',
   summary: 'Get the last deployment date of the project.',
-  version: '0.0.1',
-  git: 'https://github.com/fafournier/last-deploy',
+  version: '0.0.2',
+  git: 'https://github.com/fafournier/meteor-last-deploy',
   documentation: 'README.md'
 });
 
@@ -14,11 +14,11 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.2');
-  api.use('ecmascript@0.1.3');
+  api.use('ecmascript');
   api.use('templating', 'client');
   api.use('reactive-var', 'client');
-  api.use('momentjs:moment@2.10.6', 'client', {weak: true});
-  api.use('copleykj:livestamp@1.1.7', 'client', {weak: true});
+  api.use('momentjs:moment', 'client', {weak: true});
+  api.use('copleykj:livestamp', 'client', {weak: true});
   api.addFiles('server.js','server');
   api.addFiles('deployDate.html', 'client');
   api.addFiles('deployDate.js','client');

@@ -1,6 +1,7 @@
 if (Meteor.isClient) {
   Template = Package.templating.Template;
   moment = (Package && Package["momentjs:moment"] && Package["momentjs:moment"].moment )? Package["momentjs:moment"].moment : null;
+  if(!moment) import moment from 'moment';
 
   Template.deployDate.onCreated(function(){
     var instance = this;
@@ -44,7 +45,7 @@ if (Meteor.isClient) {
             return ret;
         }
       }else{
-        console.warn("add the momentjs:moment package to use the advanced formating options with last-deploy");
+        console.warn("add the momentjs:moment package or 'meteor npm install --save moment' to use the advanced formating options with last-deploy");
       }
     },
     formatDate: function () {
@@ -55,7 +56,7 @@ if (Meteor.isClient) {
         else
           return ret;
       }else{
-        console.warn("add the momentjs:moment package to use the advanced formating options with last-deploy");
+        console.warn("add the momentjs:moment package  or 'meteor npm install --save moment' to use the advanced formating options with last-deploy");
         return Template.instance().deployDate.get();
       }
     }
