@@ -1,6 +1,7 @@
-DEPRECATED: Things have evolved and you have more choice than ever. You probably don't need this package anymore.
+DEPRECATED: Probably not needed anymore. Use the code directly.
 ====================================
 
+Things have evolved and you have more choice than ever. You probably don't need this package anymore.
 
 Nowaday, you could probably just add the npm packages to your codebase
 
