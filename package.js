@@ -14,11 +14,11 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.2');
-  api.use('ecmascript');
+  api.use('ecmascript@0.1.3');
   api.use('templating', 'client');
   api.use('reactive-var', 'client');
-  api.use('momentjs:moment', 'client', {weak: true});
-  api.use('copleykj:livestamp', 'client', {weak: true});
+  api.use('momentjs:moment@2.10.0', 'client', {weak: true});
+  api.use('copleykj:livestamp@1.1.2', 'client', {weak: true});
   api.addFiles('server.js','server');
   api.addFiles('deployDate.html', 'client');
   api.addFiles('deployDate.js','client');
