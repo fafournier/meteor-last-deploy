@@ -1,7 +1,7 @@
 Package.describe({
   name: 'fafournier:last-deploy',
   summary: 'DEPRECATED: Get the last deployment date.',
-  version: '0.0.5',
+  version: '0.0.6',
   git: 'https://github.com/fafournier/meteor-last-deploy',
   documentation: 'README.md'
 });
